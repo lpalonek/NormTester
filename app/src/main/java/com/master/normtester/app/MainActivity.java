@@ -1,9 +1,10 @@
 package com.master.normtester.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.master.normtester.app.tester.rest.RestClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +12,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        RestClient restClient = new RestClient();
+        restClient.execute();
+//        try {
+//            ImageData imageData = restClient.get();
+//            Log.e("", imageData.getName());
+//        } catch (InterruptedException | ExecutionException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
